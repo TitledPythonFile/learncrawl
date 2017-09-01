@@ -163,8 +163,8 @@ def get_new_video(url):
 if __name__ == "__main__":
     # web_url = sys.argv[1]
     web_url = 'http://tieba.baidu.com/f?ie=utf-8&kw=%E8%A7%86%E9%A2%91&red_tag=t0121432679'
-    get_url(web_url)
-    # crawl(web_url)
+    # get_url(web_url)
+    crawl(web_url)
 
     # detail_url = "http://tieba.baidu.com/p/5252992647?fid=1252235"
     # get_time(detail_url)
