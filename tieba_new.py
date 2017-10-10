@@ -26,9 +26,12 @@ all = set()
 # 下载视频的函数
 def download(url):
     # url = "http://tb-video.bdstatic.com/tieba-smallvideo-transcode/39947531_6faf7550cae64e14d06a2e963e9404e3_7fd6f25a_2.mp4?authorization=bce-auth-v1%2Fde94045c2e42438fad71ab8df47a6727%2F2017-08-04T08%3A03%3A35Z%2F1800%2F%2F85fd245bec17924f375572493aa8c11ed6856f8d05181eefe05009a6e77b4b51"
-    session = requests.Session()
-    r = session.get(url)
 
+    try:
+        session = requests.Session()
+        r = session.get(url)
+    except:
+        return
     name = str(int(time.time()))
     path = name + ".mp4"
     with open(path,"wb") as f:
@@ -161,8 +164,8 @@ def get_new_video(url):
 
 
 if __name__ == "__main__":
-    # web_url = sys.argv[1]
-    web_url = 'http://tieba.baidu.com/f?ie=utf-8&kw=%E8%A7%86%E9%A2%91&red_tag=t0121432679'
+    web_url = sys.argv[1]
+    # web_url = 'http://tieba.baidu.com/f?ie=utf-8&kw=%E8%A7%86%E9%A2%91&red_tag=t0121432679'
     # get_url(web_url)
     crawl(web_url)
 
